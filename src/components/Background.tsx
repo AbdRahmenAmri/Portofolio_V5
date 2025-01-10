@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react"
 
 const AnimatedBackground = () => {
-	const blobRefs = useRef([])
+	const blobRefs = useRef<(HTMLDivElement | null)[]>([])
 	const initialPositions = [
 		{ x: -4, y: 0 },
 		{ x: -4, y: 0 },
@@ -29,8 +29,10 @@ const AnimatedBackground = () => {
 				const y = initialPos.y + yOffset
 
 				// Apply transformation with smooth transition
-				blob.style.transform = `translate(${x}px, ${y}px)`
-				blob.style.transition = "transform 1.4s ease-out"
+				if (blob) {
+					blob.style.transform = `translate(${x}px, ${y}px)`
+					blob.style.transition = "transform 1.4s ease-out"
+				}
 			})
 
 			requestId = requestAnimationFrame(handleScroll)

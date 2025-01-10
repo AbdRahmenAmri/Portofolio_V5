@@ -21,8 +21,8 @@ const Navbar = () => {
                 if (section) {
                     return {
                         id: item.href.replace("#", ""),
-                        offset: section.offsetTop - 550,
-                        height: section.offsetHeight
+                        offset: (section as HTMLElement).offsetTop - 550,
+                        height: (section as HTMLElement).offsetHeight
                     };
                 }
                 return null;
@@ -30,8 +30,7 @@ const Navbar = () => {
 
             const currentPosition = window.scrollY;
             const active = sections.find(section => 
-                currentPosition >= section.offset && 
-                currentPosition < section.offset + section.height
+                section && currentPosition >= section.offset && currentPosition < section.offset + section.height
             );
 
             if (active) {

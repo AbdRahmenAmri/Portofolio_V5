@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback, memo } from 'react';
 import { getDocs, addDoc, collection, onSnapshot, query, orderBy, serverTimestamp } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { db, storage } from '../firebase-comment';
+import { db, storage } from '../firebase-comment'
 import { MessageCircle, UserCircle2, Loader2, AlertCircle, Send, ImagePlus, X } from 'lucide-react';
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -42,8 +42,8 @@ const CommentForm = memo(({ onSubmit, isSubmitting, error }) => {
     const [userName, setUserName] = useState('');
     const [imagePreview, setImagePreview] = useState(null);
     const [imageFile, setImageFile] = useState(null);
-    const textareaRef = useRef(null);
-    const fileInputRef = useRef(null);
+    const textareaRef = useRef<HTMLTextAreaElement>(null);
+    const fileInputRef = useRef<HTMLInputElement>(null);
 
     const handleImageChange = useCallback((e) => {
         const file = e.target.files[0];
@@ -296,7 +296,7 @@ const Komentar = () => {
                 )}
             </div>
         </div>
-        <style jsx>{`
+        <style>{`
             .custom-scrollbar::-webkit-scrollbar {
                 width: 6px;
             }
