@@ -1,3 +1,4 @@
+//tsconfig.json
 {
   "compilerOptions": {
     "target": "esnext",
@@ -14,6 +15,7 @@
       "@DATA/*": ["src/DATA/*"],
       "@types_def/*": ["src/types/*"],
       "@pages/*": ["src/pages/*"],
+      "@hooks/*": ["src/hooks/*"],
     }
   },
   "include": ["src"],

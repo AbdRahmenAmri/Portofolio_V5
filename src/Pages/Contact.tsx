@@ -1,8 +1,8 @@
 import { useEffect } from "react";
-import SocialLinks from "../components/SocialLinks";
+import SocialLinks from "@components/SocialLinks";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import SOCIAL_LINKS from "../DATA/SOCIAL-LINKS";
+import SOCIAL_LINKS from "@DATA/social-links";
 
 const ContactPage = () => {
 
