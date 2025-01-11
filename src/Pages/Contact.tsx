@@ -1,18 +1,10 @@
-import { useEffect } from "react";
 import SocialLinks from "@components/SocialLinks";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import SOCIAL_LINKS from "@DATA/social-links";
+import useAOS from "@hooks/useAos";
 
 const ContactPage = () => {
-
-  useEffect(() => {
-    AOS.init({
-      once: false,
-    });
-  }, []);
-
-
+  useAOS({ once: true })
+  
   return (
     <>
       <div className="text-center lg:mt-[5%] mt-10 mb-2 sm:px-0 px-[5%]">

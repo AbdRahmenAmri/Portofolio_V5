@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { db, collection } from "../firebase";
 import { getDocs } from "firebase/firestore";
 import PropTypes from "prop-types";
@@ -11,10 +11,9 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import CardProject from "../components/CardProject";
 import TechStackIcon from "../components/TechStackIcon";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import Certificate from "../components/Certificate";
 import { Code, Award, Boxes } from "lucide-react";
+import useAOS from "@hooks/useAos";
 
 // Separate ShowMore/ShowLess button component
 const ToggleButton = ({ onClick, isShowingMore }) => (
@@ -125,12 +124,7 @@ export default function FullWidthTabs() {
   const isMobile = window.innerWidth < 768;
   const initialItems = isMobile ? 4 : 6;
 
-  useEffect(() => {
-    // Initialize AOS once
-    AOS.init({
-      once: false, // This will make animations occur only once
-    });
-  }, []);
+  useAOS({ once: true })
 
   const fetchData = useCallback(async () => {
     try {
@@ -357,7 +351,7 @@ export default function FullWidthTabs() {
                     data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
                     data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}
                   >
-                    <TechStackIcon TechStackIcon={stack.icon} Language={stack.language} />
+                    <TechStackIcon techStackIcon={stack.icon} language={stack.language} />
                   </div>
                 ))}
               </div>

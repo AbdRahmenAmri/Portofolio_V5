@@ -16,6 +16,7 @@
       "@types_def/*": ["src/types/*"],
       "@pages/*": ["src/pages/*"],
       "@hooks/*": ["src/hooks/*"],
+      "@layouts/*": ["src/layouts/*"],
     }
   },
   "include": ["src"],

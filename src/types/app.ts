@@ -12,3 +12,9 @@ export type T_DOMAIN = {
     url: string;
     ownerName: string
 }
+
+export type T_ABOUT_ME = {
+    fullName: string,
+    description: string,
+    resumeLink: string
+}

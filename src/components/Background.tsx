@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react"
+import { useEffect, useRef } from "react"
 
 const AnimatedBackground = () => {
 	const blobRefs = useRef<(HTMLDivElement | null)[]>([])
@@ -11,11 +11,10 @@ const AnimatedBackground = () => {
 
 	useEffect(() => {
 		let currentScroll = 0
-		let requestId
+		let requestId: number
 
 		const handleScroll = () => {
 			const newScroll = window.pageYOffset
-			const scrollDelta = newScroll - currentScroll
 			currentScroll = newScroll
 
 			blobRefs.current.forEach((blob, index) => {
@@ -57,7 +56,7 @@ const AnimatedBackground = () => {
 				<div
 					ref={(ref) => (blobRefs.current[2] = ref)}
 					className="absolute -bottom-8 left-[-40%] md:left-20 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-40 md:opacity-20 "></div>
-					<div
+				<div
 					ref={(ref) => (blobRefs.current[3] = ref)}
 					className="absolute -bottom-10 right-20 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 md:opacity-10 hidden sm:block"></div>
 			</div>
