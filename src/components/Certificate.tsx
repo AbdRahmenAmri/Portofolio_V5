@@ -1,18 +1,13 @@
-import React, { useState } from "react"
-import { Modal, IconButton, Box, Fade, Backdrop, Zoom, Typography } from "@mui/material"
+import { useState } from "react"
+import { Modal, IconButton, Box, Backdrop, Typography } from "@mui/material"
 import CloseIcon from "@mui/icons-material/Close"
 import FullscreenIcon from "@mui/icons-material/Fullscreen"
+import { T_CERTIFICATE } from "@types_def/index"
 
-const Certificate = ({ ImgSertif }) => {
+const Certificate = ({ img }: T_CERTIFICATE) => {
 	const [open, setOpen] = useState(false)
 
-	const handleOpen = () => {
-		setOpen(true)
-	}
-
-	const handleClose = () => {
-		setOpen(false)
-	}
+	const handleToggle = () => setOpen(!open)
 
 	return (
 		<Box component="div" sx={{ width: "100%" }}>
@@ -57,7 +52,7 @@ const Certificate = ({ ImgSertif }) => {
 					}}>
 					<img
 						className="certificate-image"
-						src={ImgSertif}
+						src={img}
 						alt="Certificate"
 						style={{
 							width: "100%",
@@ -67,7 +62,7 @@ const Certificate = ({ ImgSertif }) => {
 							filter: "contrast(1.10) brightness(0.9) saturate(1.1)",
 							transition: "filter 0.3s ease",
 						}}
-						onClick={handleOpen}
+						onClick={handleToggle}
 					/>
 				</Box>
 
@@ -85,7 +80,7 @@ const Certificate = ({ ImgSertif }) => {
 						cursor: "pointer",
 						zIndex: 2,
 					}}
-					onClick={handleOpen}>
+					onClick={handleToggle}>
 					{/* Hover Content */}
 					<Box
 						className="hover-content"
@@ -122,7 +117,7 @@ const Certificate = ({ ImgSertif }) => {
 			{/* Modal */}
 			<Modal
 				open={open}
-				onClose={handleClose}
+				onClose={handleToggle}
 				aria-labelledby="modal-modal-title"
 				aria-describedby="modal-modal-description"
 				BackdropComponent={Backdrop}
@@ -158,7 +153,7 @@ const Certificate = ({ ImgSertif }) => {
 					}}>
 					{/* Close Button */}
 					<IconButton
-						onClick={handleClose}
+						onClick={handleToggle}
 						sx={{
 							position: "absolute",
 							right: 16,
@@ -178,7 +173,7 @@ const Certificate = ({ ImgSertif }) => {
 
 					{/* Modal Image */}
 					<img
-						src={ImgSertif}
+						src={img}
 						alt="Certificate Full View"
 						style={{
 							display: "block",

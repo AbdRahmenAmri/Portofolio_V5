@@ -3,16 +3,14 @@ import { FileText, Code, Award, Globe, Sparkles } from "lucide-react"
 import SectionTitle from "@components/SectionTitle";
 import ProfileImage from "@components/ProfileImage";
 import StatCard from "@components/StatCard";
-import useAOS from "@hooks/useAos";
 import ABOUT_ME from "@DATA/about-me";
+import PROJECTS from "@DATA/projects";
+import CERTIFICATES from "@DATA/certificates";
 
 
 const AboutPage = () => {
-  useAOS({ once: true })
   // Memoized calculations
   const { totalProjects, totalCertificates, YearExperience } = useMemo(() => {
-    const storedProjects = JSON.parse(localStorage.getItem("projects") || "[]");
-    const storedCertificates = JSON.parse(localStorage.getItem("certificates") || "[]");
 
     const startDate = new Date("2021-11-06");
     const today = new Date();
@@ -20,8 +18,8 @@ const AboutPage = () => {
       (today < new Date(today.getFullYear(), startDate.getMonth(), startDate.getDate()) ? 1 : 0);
 
     return {
-      totalProjects: storedProjects.length,
-      totalCertificates: storedCertificates.length,
+      totalProjects: PROJECTS.length,
+      totalCertificates: CERTIFICATES.length,
       YearExperience: experience
     };
   }, []);
@@ -104,7 +102,7 @@ const AboutPage = () => {
             </div>
           </div>
 
-          <ProfileImage src="/Photo.png" alt="Profile" />
+          <ProfileImage src={ABOUT_ME.avatar} alt="Profile" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">

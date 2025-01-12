@@ -1,0 +1,77 @@
+import { T_PROJECT } from "@types_def/index";
+
+const PROJECTS: T_PROJECT[] = [
+  {
+    id: "1",
+    title: "Personal Portfolio",
+    description:
+      "A personal portfolio website to showcase my projects and skills.",
+    technologies: ["TypeScript", "React", "Node.js"],
+    img: "https://placehold.co/600x400",
+    link: "https://github.com/username/portfolio",
+    features: ["RANDOM FEATIRE NUMBER ONE"],
+    repo: "https://github.com/username/portfolio",
+  },
+  {
+    id: "2",
+    title: "E-commerce Platform",
+    description: "An e-commerce platform for buying and selling products.",
+    technologies: ["JavaScript", "React", "Express"],
+    img: "https://placehold.co/600x400",
+    link: "https://github.com/username/ecommerce",
+    features: ["User authentication", "Product search", "Shopping cart"],
+    repo: "https://github.com/username/ecommerce",
+  },
+  {
+    id: "3",
+    title: "Blog Website",
+    description: "A blog website for sharing articles and posts.",
+    technologies: ["TypeScript", "Next.js", "MongoDB"],
+    img: "https://placehold.co/600x400",
+    link: "https://github.com/username/blog",
+    features: ["Markdown support", "Comment system", "SEO friendly"],
+    repo: "https://github.com/username/blog",
+  },
+  {
+    id: "4",
+    title: "Task Manager",
+    description: "A task management app to organize and track tasks.",
+    technologies: ["TypeScript", "Vue.js", "Firebase"],
+    img: "https://placehold.co/600x400",
+    link: "https://github.com/username/task-manager",
+    features: ["Task creation", "Due dates", "Notifications"],
+    repo: "https://github.com/username/task-manager",
+  },
+  {
+    id: "5",
+    title: "Weather App",
+    description: "A weather app to check current weather conditions.",
+    technologies: ["JavaScript", "Angular", "OpenWeatherMap API"],
+    img: "https://placehold.co/600x400",
+    link: "https://github.com/username/weather-app",
+    features: ["Current weather", "7-day forecast", "Location search"],
+    repo: "https://github.com/username/weather-app",
+  },
+  {
+    id: "6",
+    title: "Chat Application",
+    description: "A real-time chat application for messaging.",
+    technologies: ["TypeScript", "React", "Socket.io"],
+    img: "https://placehold.co/600x400",
+    link: "https://github.com/username/chat-app",
+    features: ["Real-time messaging", "User presence", "Private chats"],
+    repo: "https://github.com/username/chat-app",
+  },
+  {
+    id: "7",
+    title: "Fitness Tracker",
+    description: "A fitness tracker app to log and monitor workouts.",
+    technologies: ["JavaScript", "React Native", "Node.js"],
+    img: "https://placehold.co/600x400",
+    link: "https://github.com/username/fitness-tracker",
+    features: ["Workout logging", "Progress tracking", "Goal setting"],
+    repo: "https://github.com/username/fitness-tracker",
+  },
+];
+
+export default PROJECTS;

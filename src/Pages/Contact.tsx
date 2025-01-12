@@ -1,10 +1,7 @@
 import SocialLinks from "@components/SocialLinks";
 import SOCIAL_LINKS from "@DATA/social-links";
-import useAOS from "@hooks/useAos";
 
-const ContactPage = () => {
-  useAOS({ once: true })
-  
+const ContactPage = () => {  
   return (
     <>
       <div className="text-center lg:mt-[5%] mt-10 mb-2 sm:px-0 px-[5%]">

@@ -1,4 +1,4 @@
-import { T_SOCIAL_MEDIA_LINK } from "@types_def/app";
+import { T_SOCIAL_MEDIA_LINK } from "@types_def/index";
 import { ExternalLink } from "lucide-react";
 import { SocialIcon } from "react-social-icons";
 

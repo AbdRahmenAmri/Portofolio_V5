@@ -1,4 +1,4 @@
-import { T_DOMAIN } from "@types_def/app"
+import { T_DOMAIN } from "@types_def/index"
 
 const DOMAIN: T_DOMAIN = {
     url: 'abdrahmen.tn',

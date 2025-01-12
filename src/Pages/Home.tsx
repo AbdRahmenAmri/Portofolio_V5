@@ -1,12 +1,13 @@
 import { useState, useEffect, useCallback, memo } from "react"
-import { Github, Linkedin, Mail, ExternalLink, Instagram } from "lucide-react"
+import { Github, Linkedin, Mail, ExternalLink, FacebookIcon } from "lucide-react"
 import { DotLottieReact } from '@lottiefiles/dotlottie-react'
-import useAOS from "@hooks/useAos"
 import StatusBadge from "@components/StatusBadge";
 import MainTitle from "@components/MainTitle";
 import TechStack from "@components/TechStack";
 import CTAButton from "@components/CTAButton";
 import SocialLink from "@components/SocialLink";
+import SOCIAL_LINKS from "@DATA/social-links";
+import ABOUT_ME from "@DATA/about-me";
 
 // Constants
 const TYPING_SPEED = 100;
@@ -14,16 +15,12 @@ const ERASING_SPEED = 50;
 const PAUSE_DURATION = 2000;
 
 
-const WORDS = ["Network & Telecom Student", "Tech Enthusiast"];
-const TECH_STACK = ["React", "Javascript", "Node.js", "Tailwind"];
-const SOCIAL_LINKS = [
-  { Icon: Github, link: "https://github.com/EkiZR" },
-  { Icon: Linkedin, link: "https://www.linkedin.com/in/ekizr/" },
-  { Icon: Instagram, link: "https://www.instagram.com/ekizr_/?hl=id" }
+const social_links = [
+  { Icon: Github, link: SOCIAL_LINKS.find(item => item.name === "GitHub")?.url as string },
+  { Icon: Linkedin, link: SOCIAL_LINKS.find(item => item.name === "LinkedIn")?.url as string },
+  { Icon: FacebookIcon, link: SOCIAL_LINKS.find(item => item.name === "Facebook")?.url as string }
 ];
-
 const Home = () => {
-  useAOS({ once: true, offset: 10 });
   const [text, setText] = useState("")
   const [isTyping, setIsTyping] = useState(true)
   const [wordIndex, setWordIndex] = useState(0)
@@ -40,8 +37,8 @@ const Home = () => {
   // Optimize typing effect
   const handleTyping = useCallback(() => {
     if (isTyping) {
-      if (charIndex < WORDS[wordIndex].length) {
-        setText(prev => prev + WORDS[wordIndex][charIndex]);
+      if (charIndex < ABOUT_ME.roles[wordIndex].length) {
+        setText(prev => prev + ABOUT_ME.roles[wordIndex][charIndex]);
         setCharIndex(prev => prev + 1);
       } else {
         setTimeout(() => setIsTyping(false), PAUSE_DURATION);
@@ -51,7 +48,7 @@ const Home = () => {
         setText(prev => prev.slice(0, -1));
         setCharIndex(prev => prev - 1);
       } else {
-        setWordIndex(prev => (prev + 1) % WORDS.length);
+        setWordIndex(prev => (prev + 1) % ABOUT_ME.roles.length);
         setIsTyping(true);
       }
     }
@@ -76,8 +73,8 @@ const Home = () => {
     },
     style: { width: "100%", height: "100%" },
     className: `w-full h-full transition-all duration-500 ${isHovering
-        ? "scale-[180%] sm:scale-[160%] md:scale-[150%] lg:scale-[145%] rotate-2"
-        : "scale-[175%] sm:scale-[155%] md:scale-[145%] lg:scale-[140%]"
+      ? "scale-[180%] sm:scale-[160%] md:scale-[150%] lg:scale-[145%] rotate-2"
+      : "scale-[175%] sm:scale-[155%] md:scale-[145%] lg:scale-[140%]"
       }`
   };
 
@@ -106,12 +103,12 @@ const Home = () => {
                 <p className="text-base md:text-lg text-gray-400 max-w-xl leading-relaxed font-light"
                   data-aos="fade-up"
                   data-aos-delay="1000">
-                  Menciptakan Website Yang Inovatif, Fungsional, dan User-Friendly untuk Solusi Digital.
+                  {ABOUT_ME.technologiesDescription}
                 </p>
 
                 {/* Tech Stack */}
                 <div className="flex flex-wrap gap-3 justify-start" data-aos="fade-up" data-aos-delay="1200">
-                  {TECH_STACK.map((tech, index) => (
+                  {ABOUT_ME.technologies.map((tech, index) => (
                     <TechStack key={index} tech={tech} />
                   ))}
                 </div>
@@ -124,7 +121,7 @@ const Home = () => {
 
                 {/* Social Links */}
                 <div className="hidden sm:flex gap-4 justify-start" data-aos="fade-up" data-aos-delay="1600">
-                  {SOCIAL_LINKS.map((social, index) => (
+                  {social_links.map((social, index) => (
                     <SocialLink key={index} {...social} />
                   ))}
                 </div>
