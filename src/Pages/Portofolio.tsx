@@ -8,7 +8,7 @@ import Box from "@mui/material/Box";
 import CardProject from "../components/CardProject";
 import TechStackIcon from "../components/TechStackIcon";
 import Certificate from "../components/Certificate";
-import { Code, Award, Boxes } from "lucide-react";
+import { Code, Award, Boxes, Star } from "lucide-react";
 import PROJECTS from "@DATA/projects";
 import CERTIFICATES from "@DATA/certificates";
 import TECHNOLOGIES from "@DATA/technologies";
@@ -19,6 +19,7 @@ import SectionTitle from "@components/SectionTitle";
 import TabContent from "@components/TabContent";
 
 export default function FullWidthTabs() {
+
   const theme = useTheme();
   const [value, setValue] = useState<number>(0);
   const handleChange = (_: any, newValue: number) => setValue(newValue);

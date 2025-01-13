@@ -8,6 +8,7 @@ import CTAButton from "@components/CTAButton";
 import SocialLink from "@components/SocialLink";
 import SOCIAL_LINKS from "@DATA/social-links";
 import ABOUT_ME from "@DATA/about-me";
+import useAOS from "@hooks/useAos";
 
 // Constants
 const TYPING_SPEED = 100;
@@ -21,6 +22,8 @@ const social_links = [
   { Icon: FacebookIcon, link: SOCIAL_LINKS.find(item => item.name === "Facebook")?.url as string }
 ];
 const Home = () => {
+  useAOS({ once: true, offset: 10 });
+
   const [text, setText] = useState("")
   const [isTyping, setIsTyping] = useState(true)
   const [wordIndex, setWordIndex] = useState(0)

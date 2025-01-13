@@ -18,7 +18,7 @@ const ProjectStats = ({ technologies, features }: ProjectStatsProps) => {
                 </div>
                 <div className="flex-grow">
                     <div className="text-lg md:text-xl font-semibold text-blue-200">{technologiesCount}</div>
-                    <div className="text-[10px] md:text-xs text-gray-400">Total Teknologi</div>
+                    <div className="text-[10px] md:text-xs text-gray-400">Total Technologies</div>
                 </div>
             </div>
 
@@ -28,7 +28,7 @@ const ProjectStats = ({ technologies, features }: ProjectStatsProps) => {
                 </div>
                 <div className="flex-grow">
                     <div className="text-lg md:text-xl font-semibold text-purple-200">{featuresCount}</div>
-                    <div className="text-[10px] md:text-xs text-gray-400">Fitur Utama</div>
+                    <div className="text-[10px] md:text-xs text-gray-400">Total Features</div>
                 </div>
             </div>
         </div>

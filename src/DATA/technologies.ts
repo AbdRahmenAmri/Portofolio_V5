@@ -1,18 +1,31 @@
 import { T_TECHNOLOGIE } from "@types_def/index";
 
 const TECHNOLOGIES: T_TECHNOLOGIE[] = [
-  { icon: "html.svg", language: "HTML" },
-  { icon: "css.svg", language: "CSS" },
-  { icon: "javascript.svg", language: "JavaScript" },
-  { icon: "tailwind.svg", language: "Tailwind CSS" },
   { icon: "reactjs.svg", language: "ReactJS" },
-  { icon: "vite.svg", language: "Vite" },
+  { icon: "angular.svg", language: "Angular" },
+  { icon: "vue.svg", language: "VueJs" },
+
   { icon: "nodejs.svg", language: "Node JS" },
-  { icon: "bootstrap.svg", language: "Bootstrap" },
+  { icon: "nestjs.svg", language: "NestJs" },
+
+  { icon: "jest.svg", language: "Jest" },
+
+  { icon: "flutter.svg", language: "Flutter" },
+
+  { icon: "python.svg", language: "Python" },
+  { icon: "flask.svg", language: "Flask" },
+  { icon: "django.svg", language: "Django" },
+
   { icon: "firebase.svg", language: "Firebase" },
-  { icon: "MUI.svg", language: "Material UI" },
-  { icon: "vercel.svg", language: "Vercel" },
-  { icon: "SweetAlert.svg", language: "SweetAlert2" },
+  { icon: "aws.svg", language: "AWS" },
+  { icon: "azure.svg", language: "Azure" },
+  { icon: "gcp.svg", language: "GCP" },
+
+  { icon: "terraform.svg", language: "Terraform" },
+  { icon: "ansible.svg", language: "Ansible" },
+  { icon: "kubernetes.svg", language: "Kubernetes" },
+  { icon: "docker.svg", language: "Docker" },
+  { icon: "jenkins.svg", language: "Jenkins" },
 ];
 
 export default TECHNOLOGIES;
