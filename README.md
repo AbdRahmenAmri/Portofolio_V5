@@ -89,5 +89,4 @@ The project stores all static data in the `src/DATA` directory. To personalize t
    - Update your social media links to connect with your audience.  
 
 6. **`technologies.ts`**  
-   - List the technologies you specialize in or have experience with.  
-     ```
+   - List the technologies you specialize in or have experience with.
