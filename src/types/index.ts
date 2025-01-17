@@ -6,6 +6,7 @@ export type T_SOCIAL_MEDIA_LINK = {
   color: string;
   gradient: string;
   isPrimary?: boolean;
+  network?: string;
 };
 
 export type T_DOMAIN = {

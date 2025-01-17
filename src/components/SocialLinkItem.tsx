@@ -27,7 +27,7 @@ const SocialLinkItem = ({ link }: { link: T_SOCIAL_MEDIA_LINK }) => (
                     style={{ backgroundColor: link.color }}
                 />
                 <div className="relative p-2 rounded-md">
-                    <SocialIcon url={link.url} />
+                    <SocialIcon network={link?.network ? link.network: undefined} url={link.url} />
                 </div>
             </div>
 
