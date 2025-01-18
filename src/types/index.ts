@@ -18,6 +18,8 @@ export type T_ABOUT_ME = {
   fullName: string;
   avatar: string;
   description: string;
+  // Optimazed description ( SEO friendly )
+  SeoDescription?: string;
   resumeLink: string;
   roles: string[];
   technologies: string[];
