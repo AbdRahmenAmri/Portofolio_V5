@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d docs",
+    "deploy": "gh-pages -d build",
     "generate-sitemap": "node --loader ts-node/esm src/generators/sitemap.ts"
   },
   "dependencies": {
