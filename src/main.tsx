@@ -15,7 +15,7 @@ if (rootElement) {
 	ReactDOM.createRoot(rootElement).render(
 		<React.StrictMode>
 			<HelmetProvider>
-				<SEO title={"Software Engineer DevOps - AbdRahmen Amri"} description={ABOUT_ME.description} name={"AbdRahmen"} type={"portfolio"} keywords={`${ABOUT_ME.roles.join(',')},${ABOUT_ME.technologies.join(',')}`} image={`${DOMAIN.url}/meta.jpg`} url={`${DOMAIN.url}/meta.jpg`} />
+				<SEO title={"Software Engineer DevOps - AbdRahmen Amri"} description={ABOUT_ME.description} name={"AbdRahmen"} type={"portfolio"} keywords={`${ABOUT_ME.roles.join(',')},${ABOUT_ME.technologies.join(',')}`} image={`https://${DOMAIN.url}/meta.jpg`} url={`https://${DOMAIN.url}/meta.jpg`} />
 				<App />
 			</HelmetProvider>
 		</React.StrictMode>
