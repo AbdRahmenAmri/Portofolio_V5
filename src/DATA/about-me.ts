@@ -9,7 +9,7 @@ const ABOUT_ME: T_ABOUT_ME = {
   seoDescription:
     "DevOps-driven software engineer specializing in full-stack development, AWS cloud services, and scalable applications. Expert in CI/CD, IaC, and agile workflows. Passionate about AI and computer vision. Committed to continuous learning.",
   resumeLink:
-    "https://drive.google.com/file/d/1cLIZwVteHoILquYnZ_oLi3q1_WCUiWTc/view?usp=drive_link",
+    "https://drive.google.com/file/d/1hv9t_QaBdMj0wExfzRDeRC6QQhylvSY_/view?usp=sharing",
   roles: [
     "DevOps Engineer",
     "Cloud Architect",
